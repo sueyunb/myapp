@@ -1,0 +1,19 @@
+@import url('https://fonts.cdnfonts.com/css/franklin-gothic');  
+@import url('https://fonts.cdnfonts.com/css/bungee');            
+
+body {
+  margin: 0;
+  font-family: 'Franklin Gothic', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a{
+  color: #444;
+  text-decoration: none;
+}
