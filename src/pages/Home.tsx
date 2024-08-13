@@ -45,7 +45,9 @@ function Home() {
         <Text2>My efforts to achieve my dream</Text2>
         <Page4Container>
             <DescPhoto>
-                <Photo src="/img/section_4.png" />
+                <Size>
+                    <Photo src="/img/section_4.png" />
+                </Size>
                 <SmallText>
                 I am learning Taekwondo to have healthy physical 
                 strength and strong mental strength.
@@ -53,7 +55,9 @@ function Home() {
             </DescPhoto>
 
             <DescPhoto>
-                <Photo src="/img/section_5.png" />
+                <Size>
+                    <Photo src="/img/section_5.png" />
+                </Size>
                 <SmallText>
                 I review the math and science I learned at school 
                 for an hour every day before going to bed.
@@ -61,7 +65,9 @@ function Home() {
             </DescPhoto>
 
             <DescPhoto>
-                <Photo src="/img/section_6.png" />
+                <Size>
+                    <Photo src="/img/section_6.png" />
+                </Size>
                 <SmallText>
                 I am planning to prepare various certifications so 
                 that I can use computers proficiently.
@@ -69,7 +75,9 @@ function Home() {
             </DescPhoto>
 
             <DescPhoto>
-                <Photo src="/img/section_7.png" /> 
+                <Size>
+                    <Photo src="/img/section_7.png" />
+                </Size>
                 <SmallText>
                 Every day, I search and study space-related content 
                 on YouTube.
@@ -102,16 +110,44 @@ const Container = styled.div`
 
 const SpaceMan = styled("img")`
     position: absolute;
-    top: 130px;
-    right: 123px;
     z-index: 2;
+    top: 428px;
+    right: 203px;
+    animation: spaceman1 3s Infinite Alternate; 
+
+    @keyframes spaceman1 {
+        from{
+            top: 406px;
+            right: 151px;
+        }
+
+        to{
+            top: 275px;
+            right: 86px;
+        }
+    }
 `;
+
+
 
 const Rocket = styled("img")`
     position: absolute;
-    bottom: 100px;
-    left: 13px;
     z-index: 2;
+    bottom: 84px;
+    left: 50px;
+    animation: rocket 3s ease-in Infinite; 
+
+    @keyframes rocket {
+        0%{
+            bottom: 84px;
+            left: 50px;
+        }
+
+        100%{
+            bottom: 720px;
+            left: 930px;
+        }
+    } 
 `;
 
 const Title = styled.div`
@@ -125,8 +161,10 @@ const SmallTitle = styled.div`
 `;
 
 const MainTitle = styled.div`
+    position: relative;
     color: #FFED48;
     font-size: 80px;
+    z-index: 3;
 `;
 
 const Page2 = styled.div``;
@@ -184,27 +222,67 @@ const Text = styled.div`
 
 const SpaceMan2 = styled("img")`
     border-radius: 50%;
+    transition: all .4s;
+
+    &:hover {
+        transform: scale(1.2)
+    }
 `;
 
 const Planet1 = styled("img")`
     position: absolute;
-    bottom: 13px;
-    left: 12px;
     z-index: 2;
+    left: 0px;
+    animation: float1 3s Infinite Alternate;
+
+    @keyframes float1{
+        from{
+            bottom: 61px;
+            left: 0px;
+        }
+
+        to{
+            bottom: 104px;
+        }
+    }
 `;
 
 const Planet2 = styled("img")`
     position: absolute;
-    top: 30px;
-    right: 23px;
+    right: 0px;
     z-index: 2;
+    animation: float2 3s Infinite Alternate;
+
+    @keyframes float2{
+        from{
+            top: 52px;
+            right: 0px;
+        }
+
+        to{
+            top: 111px;
+        }
+    }
 `;
+
+
 
 const Planet3 = styled("img")`
     position: absolute;
-    bottom: 130px;
-    right: 123px;
+    bottom: 124px;
+    right: 485px;
     z-index: 2;
+    animation: turningplanet 4s linear Infinite;
+
+    @keyframes turningplanet{
+        to{
+            transform: rotate(0deg);
+        }
+
+        from{
+            transform: rotate(360deg);
+        }
+    }
 `;
 
 
@@ -215,25 +293,25 @@ const Page4 = styled.div`
 `;
 
 const Page4Container = styled.div`
-    width: 1170px;
+    width: 1170px;  
     margin: 0 auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    //
 `;
 
 const Text2 = styled.div`
     color: #E2D4FF;
     font-size: 40px;
     text-align: center;
-    margin-bottom: 50px;
+    margin: 50px;
 `;
 
 const DescPhoto = styled.div`
 `;
 
 const Photo = styled("img")`
-    margin-bottom: 14px;
+    width: 100%;
 `;
 
 const SmallText = styled.div`
@@ -241,8 +319,15 @@ const SmallText = styled.div`
     text-align: center;
     font-size: 20px;
     line-height: 1.5;
+    width: 284px;
 `;
 
+const Size = styled.div`
+    width: 284px;
+    height: 284px;
+    overflow: hidden;
+    margin-bottom: 14px;
+`;
 
 
 

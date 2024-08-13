@@ -21,6 +21,10 @@ function Layouts() {
                             <Link to="/activity">Activity</Link>
                         </HeaderText>
 
+                        <HeaderText>
+                            <Link to="/Study">Javascript Notes</Link>
+                        </HeaderText>
+
                     </Menu>
                 </Header>
             </HeaderBox>
